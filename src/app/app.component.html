@@ -1,10 +1,13 @@
 <header class='top-navigation'>
   <div routerLink="/home" class='nav-btn'>Home</div>
-  <div routerLink="/about" class='nav-btn'>About</div>
+  <div class="btn-container">
+    <div routerLink="/about" class='nav-btn'>About</div>
+    <div routerLink="/principles" class="nav-btn">Principles</div>
+  </div>
 </header>
 
 
-{{title}}
+<div class="page-title">{{title | uppercase}}</div>
 
 
 

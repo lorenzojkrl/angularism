@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+// import { PrinciplesComponent } from './principles/principles.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,12 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
+  },
+  {
+    path: 'principles',
+    loadChildren: () =>
+      import('./principles/principles.module').then((m) => m.PrinciplesModule),
+    // component: PrinciplesComponent,
   },
 ];
 
