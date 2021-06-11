@@ -19,6 +19,12 @@ const routes: Routes = [
       import('./principles/principles.module').then((m) => m.PrinciplesModule),
     // component: PrinciplesComponent,
   },
+  {
+    path: 'tasks',
+    loadChildren: () =>
+      import('./tasks/tasks.module').then((m) => m.TasksModule),
+    // component: PrinciplesComponent,
+  },
 ];
 
 @NgModule({
