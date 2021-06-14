@@ -1,12 +1,13 @@
 <p>tasks will be a todo list app page</p>
 <div class="container">
   <h2>Set New Task</h2>
-  <form >
+
+  <form #form="ngForm">
     <!-- 
       for links the label to the input element
       clicking on the label gives focus to inputs
     -->
-    <div class="form-group">
+    <div class="form-group" >
       <label for="task">Task</label>
       <input
         id="task"
@@ -41,3 +42,6 @@
     <button class="btn btn-primary">Create</button>
     </form>
 </div>
+
+<!-- Using custom pipe -->
+{{form | log}}
