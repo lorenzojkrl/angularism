@@ -8,11 +8,13 @@ import { DefaultData } from '../data/default-data';
 })
 export class TasksComponent implements OnInit {
   defaultData: DefaultData = {
-    task: 'Complete',
+    task: 'Do X by Y  ',
     taskText: '',
     priority: false,
     selectSomething: '1',
   };
+
+  copiedDefaultData: DefaultData = { ...this.defaultData };
   constructor() {}
 
   ngOnInit(): void {}
