@@ -9,9 +9,9 @@ import { DefaultData } from '../data/default-data';
 export class TasksComponent implements OnInit {
   defaultData: DefaultData = {
     task: 'Do X by Y  ',
-    taskText: '',
+    taskText: null,
     priority: false,
-    selectSomething: '1',
+    selectSomething: null,
   };
 
   copiedDefaultData: DefaultData = { ...this.defaultData };

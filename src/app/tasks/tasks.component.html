@@ -2,7 +2,7 @@
 <div class="container">
   <h2>Set New Task</h2>
 
-  <form #form="ngForm">
+  <form #form="ngForm" ngNativeValidate>
     <!-- 
       for links the label to the input element
       clicking on the label gives focus to inputs
@@ -15,8 +15,29 @@
         class="form-control"
         placeholder='Task'
         [(ngModel)]="copiedDefaultData.task" 
+        required
+        #classTest
+        #propertyTest="ngModel"
+        #nameField="ngModel"
       />
+      <div 
+        [hidden]="nameField.valid || nameField.untouched"  
+        class="alert alert-danger"
+      >
+        Error message!
+      </div>
     </div>
+
+    <div class="validations">
+    <h4>Validation classes and properties</h4>
+      <!-- debugging info on validation classes -->
+      <h5>Classes: {{classTest.className}}</h5>
+      <!-- debugging info on validation properties -->
+      <h5>dirty: {{propertyTest.dirty}}</h5>
+    </div>
+    
+
+
     <div class="form-group">
       <label for="taskText">Example textarea</label>
       <textarea 

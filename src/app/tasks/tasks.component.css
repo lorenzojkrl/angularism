@@ -1,0 +1,8 @@
+.validations {
+  border: 1px solid black;
+  margin: 1em;
+}
+
+.ng-invalid:not(form).ng-touched {
+  border: 1px solid red;
+}
