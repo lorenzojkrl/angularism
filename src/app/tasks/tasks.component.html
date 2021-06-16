@@ -78,11 +78,10 @@
         [(ngModel)]="copiedDefaultData.selectSomething"   
 
       >
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <!-- get data from Observable optionTypes, add async pipe -->
+        <option *ngFor="let type of optionTypes | async">
+          {{type}}
+        </option>
       </select>
     </div>
 

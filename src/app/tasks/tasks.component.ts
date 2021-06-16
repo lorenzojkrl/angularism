@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { DataService } from '../data/data.service';
 import { DefaultData } from '../data/default-data';
 
@@ -17,12 +18,15 @@ export class TasksComponent implements OnInit {
     selectSomething: null,
   };
 
+  optionTypes: Observable<string[]>;
   copiedDefaultData: DefaultData = { ...this.defaultData };
 
   // Give access to data service
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.optionTypes = this.dataService.getOptionTypes();
+  }
 
   // perform form validation here
   // private give access throughout the whole class

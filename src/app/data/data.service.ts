@@ -9,6 +9,9 @@ import { DefaultData } from './default-data';
   providedIn: 'root',
 })
 export class DataService {
+  getOptionTypes(): Observable<string[]> {
+    return of(['Monthly', 'Weekly', 'Daily']);
+  }
   // inject http client
   constructor(private http: HttpClient) {}
 
