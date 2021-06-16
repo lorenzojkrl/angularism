@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DefaultData } from '../data/default-data';
 
 @Component({
@@ -18,4 +19,9 @@ export class TasksComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  // perform form validation here
+  onSubmit(form: NgForm) {
+    console.log('In onSubmit: ', form.valid);
+  }
 }
