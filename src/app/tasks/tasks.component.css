@@ -3,6 +3,10 @@
   margin: 1em;
 }
 
-.ng-invalid:not(form).ng-touched {
+/* .ng-invalid:not(form).ng-touched {
+  border: 1px solid red;
+} */
+
+.field-error {
   border: 1px solid red;
 }

@@ -2,7 +2,9 @@
 <div class="container">
   <h2>Set New Task</h2>
 
-  <form #form="ngForm" ngNativeValidate>
+  <!-- Use ngNativeValidate to use browser native features -->
+  <!-- form in onSubmit(form) comes from template reference #form -->
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <!-- 
       for links the label to the input element
       clicking on the label gives focus to inputs
@@ -19,9 +21,10 @@
         #classTest
         #propertyTest="ngModel"
         #nameField="ngModel"
+        [class.field-error]="form.submitted && nameField.invalid"
       />
       <div 
-        [hidden]="nameField.valid || nameField.untouched"  
+        [hidden]="!form.submitted || nameField.valid"  
         class="alert alert-danger"
       >
         Error message!
