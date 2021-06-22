@@ -16,8 +16,10 @@ export class TasksComponent implements OnInit {
     taskText: null,
     priority: false,
     selectSomething: null,
+    completed: false,
   };
 
+  todosArray: DefaultData[];
   optionTypes: Observable<string[]>;
   copiedDefaultData: DefaultData = { ...this.defaultData };
 
@@ -26,6 +28,40 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
     this.optionTypes = this.dataService.getOptionTypes();
+    this.todosArray = [
+      {
+        task: 'Task1',
+        taskText: 'TBD',
+        priority: false,
+        selectSomething: '1',
+        completed: false,
+      },
+      {
+        task: 'Task2',
+        taskText: 'TBD',
+        priority: false,
+        selectSomething: '1',
+        completed: false,
+      },
+      {
+        task: 'Task3',
+        taskText: 'TBD',
+        priority: false,
+        selectSomething: '1',
+        completed: true,
+      },
+    ];
+  }
+
+  toggleDone(id: number) {
+    this.todosArray.map((value, index) => {
+      if (index === id) value.completed = !value.completed;
+      return value;
+    });
+  }
+
+  onDelete(id: number) {
+    this.todosArray = this.todosArray.filter((value, index) => index !== id);
   }
 
   // perform form validation here

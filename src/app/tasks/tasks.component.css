@@ -10,3 +10,12 @@
 .field-error {
   border: 1px solid red;
 }
+
+/* 
+class listToDo
+todo.completed ? 'done' : ''
+class indexClass includes task to strike
+*/
+.listToDo.done .indexClass {
+  text-decoration: line-through;
+}

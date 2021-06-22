@@ -88,7 +88,24 @@
     <button class="btn btn-primary">Create</button>
     </form>
 </div>
-
+<div  
+  *ngFor='let todo of todosArray; let i = index;' 
+  class="listToDo {{todo.completed ? 'done' : ''}}"
+>
+  <!-- index should come from server side -->
+  <div 
+    (click)='toggleDone(i)'
+    class="indexClass"
+  >
+    {{i}} - {{todo.task}}
+  </div>
+  <button 
+    (click)='onDelete(i)'
+    class="removeTodo"
+  >
+  delete
+  </button>
+</div>
 <!-- Using custom pipe -->
 {{form.value | log}}
 

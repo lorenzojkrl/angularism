@@ -3,4 +3,5 @@ export interface DefaultData {
   taskText: String;
   priority: Boolean;
   selectSomething: String;
+  completed: Boolean;
 }
