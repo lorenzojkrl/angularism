@@ -4,7 +4,7 @@
 
   <!-- Use ngNativeValidate to use browser native features -->
   <!-- form in onSubmit(form) comes from template reference #form -->
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <form #form="ngForm" (ngSubmit)="onSubmitLocal(form)">
     <!-- 
       for links the label to the input element
       clicking on the label gives focus to inputs
@@ -88,11 +88,13 @@
     <button class="btn btn-primary">Create</button>
     </form>
 </div>
+
+<!-- List tasks -->
 <div  
   *ngFor='let todo of todosArray; let i = index;' 
   class="listToDo {{todo.completed ? 'done' : ''}}"
 >
-  <!-- index should come from server side -->
+  <!-- index should come from server -->
   <div 
     (click)='toggleDone(i)'
     class="indexClass"

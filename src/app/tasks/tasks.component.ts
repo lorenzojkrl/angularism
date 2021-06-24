@@ -64,6 +64,25 @@ export class TasksComponent implements OnInit {
     this.todosArray = this.todosArray.filter((value, index) => index !== id);
   }
 
+  onSubmitLocal(form: NgForm) {
+    console.log('In onSubmit local: ', form.valid);
+
+    if (form.valid) {
+      // returns an observable
+      // then subscribe to it
+      this.todosArray.push({
+        task: this.copiedDefaultData.task,
+        taskText: this.copiedDefaultData.taskText,
+        priority: this.copiedDefaultData.priority,
+        selectSomething: this.copiedDefaultData.selectSomething,
+        completed: false,
+      });
+    } else {
+      this.postError = true;
+      this.postErrorMessage = 'Please, fix the error';
+    }
+  }
+
   // perform form validation here
   // private give access throughout the whole class
   onSubmit(form: NgForm) {
